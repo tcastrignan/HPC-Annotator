@@ -142,13 +142,13 @@ The software generates a log file, **general.log**, that contains all the inform
 ## Algorithm structure
 The operation of the application, at a high level, can be summarised as follows: the master node, after analysing the input file, generates dynamic software according to the characteristics of the input, which will then be executed by the slaves nodes. Once the slaves are started, a further software will manage the control of the entire application; taking care of intervening when all the nodes have completed their computation and merging all the partial results obtained, as well as carrying out tests that, if passed, guarantee the correctness of the calculation. The control software will carry out statistics on the time taken by each node (actual and real) and on the general calculation time.
 
-<p align="center"><img src="https://github.com/tcastrignan/HPC-Annotator/blob/main/Images/Logic-diagram.png" alt="Logic-diagram" style="height:60%; width:60%;"/></p>
+<p align="center"><img src="https://github.com/lorenzo-arcioni/HPC-Annotator/blob/main/Images/Logic-diagram.png" alt="Logic-diagram" style="height:60%; width:60%;"/></p>
 
 ## Benchmarks
 Various benchmarks were run on the software using Diamond's blastx tool.
 Below is a table of execution times showing the data of some organisms with standard serial version (1 process) and parallel version. We note that "Actual time" represents the execution time including the scheduling time (which has been reported only for the sake of completeness), so the "Expected Time" figure should be taken as a reference since, on a non-overloaded machine, it is a more reliable reference.
-<p align="center"><img src="https://github.com/tcastrignan/HPC-Annotator/blob/main/Images/Benchmark-SP-table.PNG" alt="Organisms times" style="height:90%; width:90%;"/></p>
-<p align="center"><img src="https://github.com/tcastrignan/HPC-Annotator/blob/main/Images/Benchmark-SP-graph.PNG" alt="Organisms Times Graph" style="height:60%; width:60%;"/></p>
+<p align="center"><img src="https://github.com/lorenzo-arcioni/HPC-Annotator/blob/main/Images/Benchmark-SP-table.PNG" alt="Organisms times" style="height:90%; width:90%;"/></p>
+<p align="center"><img src="https://github.com/lorenzo-arcioni/HPC-Annotator/blob/main/Images/Benchmark-SP-graph.PNG" alt="Organisms Times Graph" style="height:60%; width:60%;"/></p>
 
 As we can see from the graph, there is a considerable increase in performance using the HPC-Annotator application compared to using traditional BLAST/Diamond.
 Furthermore, where it is necessary to analyse a large number of sequences and/or against a large database (where serial annotation would be impossible or at any rate very time-consuming), very often the parallel version (with HPC-Annotator) makes annotation possible despite the policies imposed by the Slurm scheduler (such as the limit on the execution time of a job), thus making annotation possible on huge masses of data.
